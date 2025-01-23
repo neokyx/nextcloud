@@ -3,6 +3,9 @@ name: Build and Push Nextcloud Docker Image
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '10 16 * * *'  # This runs once a day at midnight (UTC)
+  workflow_dispatch:  # This allows you to manually trigger the workflow
 
 jobs:
   build-and-push:
