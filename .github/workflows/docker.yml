@@ -23,9 +23,10 @@ jobs:
     - name: Build Docker image
       run: |
         cd 30/apache/
-        docker build -t kyrios/nextcloud:${{ github.sha }} .
+        docker build -t kyrios/nextcloud:latest .
 
     - name: Push Docker image to Docker Hub
       run: |
         cd 30/apache/
-        docker push kyrios/nextcloud:${{ github.sha }}
+        docker push kyrios/nextcloud:latest
+
